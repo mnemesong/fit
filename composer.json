@@ -1,0 +1,43 @@
+{
+    "name": "mnemesong/match",
+    "description": "The package provides objects and an interface for build match conditions.",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "phpstan/phpstan": "*",
+        "phpstan/phpstan-webmozart-assert": "*",
+        "phpstan/extension-installer": "*"
+    },
+    "scripts": {
+        "test:unit": "phpunit test-unit",
+        "lint:src": "phpstan analyse src --level 9",
+        "lint:stubs": "phpstan analyse stubs --level 9",
+        "lint:unit": "phpstan analyse test-unit --level 9"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mnemesong\\Match\\": "src/",
+            "Mnemesong\\MatchTestUnit\\": "test-unit/",
+            "Mnemesong\\MatchTestHelpers\\": "test-helpers/",
+            "Mnemesong\\MatchStubs\\": "stubs/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pantagruel74",
+            "email": "tostar74@mail.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.4",
+        "webmozart/assert": "1.11.*",
+        "mnemesong/structure": "0.4.*"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    }
+}
