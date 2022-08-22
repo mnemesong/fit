@@ -18,6 +18,7 @@ class FieldWithArrayCond implements CaseInsensitiveComparableInterface, Operator
     use OperatorContainsConditionTrait;
 
     protected string $field;
+    /* @phpstan-ignore-next-line  */
     protected array $valArr;
 
     /**

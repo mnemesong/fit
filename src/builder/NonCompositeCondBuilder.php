@@ -6,6 +6,7 @@ use Mnemesong\Fit\conditions\FieldWithFieldCond;
 use Mnemesong\Fit\conditions\FieldWithArrayCond;
 use Mnemesong\Fit\conditions\FieldWithValCond;
 use Mnemesong\Fit\conditions\UnaryFieldCond;
+use Webmozart\Assert\Assert;
 
 class NonCompositeCondBuilder
 {
@@ -21,11 +22,12 @@ class NonCompositeCondBuilder
 
     /**
      * @param string $operator
-     * @param array $arr
+     * @param array<null|scalar> $arr
      * @return FieldWithArrayCond
      */
     public function arr(string $operator, array $arr): FieldWithArrayCond
     {
+        Assert::allNullOrScalar($arr, 'All values for comparing should be null or scalar');
         return new FieldWithArrayCond($operator, $this->firstField, $arr);
     }
 
@@ -50,10 +52,10 @@ class NonCompositeCondBuilder
     }
 
     /**
-     * @param $operator
+     * @param string $operator
      * @return UnaryFieldCond
      */
-    public function is($operator): UnaryFieldCond
+    public function is(string $operator): UnaryFieldCond
     {
         return new UnaryFieldCond($operator, $this->firstField);
     }

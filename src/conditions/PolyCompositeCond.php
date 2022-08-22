@@ -30,6 +30,7 @@ class PolyCompositeCond implements OperatorContainsConditionInterface, CondInter
      */
     protected function addConds(array $conds): void
     {
+        /* @phpstan-ignore-next-line */
         Assert::allSubclassOf($conds, CondInterface::class, 'All items in array of conditions should be objects');
         $this->conds = array_values(array_merge($this->conds, $conds));
     }
@@ -44,7 +45,7 @@ class PolyCompositeCond implements OperatorContainsConditionInterface, CondInter
 
     /**
      * @param CondInterface[] $conds
-     * @return void
+     * @return self
      */
     public function withAddConds(array $conds): self
     {

@@ -12,7 +12,8 @@
         "test:unit": "phpunit test-unit",
         "lint:src": "phpstan analyse src --level 9",
         "lint:stubs": "phpstan analyse stubs --level 9",
-        "lint:unit": "phpstan analyse test-unit --level 9"
+        "lint:unit": "phpstan analyse test-unit --level 9",
+        "lint:helpers": "phpstan analyse test-helpers --level 9"
     },
     "license": "MIT",
     "autoload": {

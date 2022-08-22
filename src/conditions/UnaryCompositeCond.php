@@ -10,9 +10,6 @@ class UnaryCompositeCond implements OperatorContainsConditionInterface, CondInte
 {
     use OperatorContainsConditionTrait;
 
-    /**
-     * @var object
-     */
     protected CondInterface $cond;
 
     /**
