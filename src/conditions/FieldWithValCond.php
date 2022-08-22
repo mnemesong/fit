@@ -13,7 +13,7 @@ use Webmozart\Assert\Assert;
 /**
  * Field with scalar value simple comparing condition
  */
-class FieldWithValSimpleCond
+class FieldWithValCond
     implements AsNumberComparableInterface, CaseInsensitiveComparableInterface, OperatorContainsConditionInterface
 {
     use AsNumberComparableTrait;
