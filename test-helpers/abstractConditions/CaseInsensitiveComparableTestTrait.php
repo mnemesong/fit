@@ -12,8 +12,14 @@ trait CaseInsensitiveComparableTestTrait
      */
     abstract protected function useTestCase(): TestCase;
 
+    /**
+     * @return CaseInsensitiveComparableInterface
+     */
     abstract protected function getInitCaseInsensitiveComparable(): CaseInsensitiveComparableInterface;
 
+    /**
+     * @return void
+     */
     public function testCaseInsensitiveComparable(): void
     {
         $obj1 = $this->getInitCaseInsensitiveComparable();

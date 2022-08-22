@@ -8,8 +8,14 @@ use PHPUnit\Framework\TestCase;
 
 trait WithCondTestTrait
 {
+    /**
+     * @return TestCase
+     */
     abstract protected function useTestCase(): TestCase;
 
+    /**
+     * @return WithCondInterface
+     */
     abstract protected function getInitWithCond(): WithCondInterface;
 
     /**

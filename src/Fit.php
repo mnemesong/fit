@@ -50,9 +50,9 @@ class Fit
     /**
      * @param Structure $struct
      * @param string $operator
-     * @return CondInterface
+     * @return CondInterface|null
      */
-    public static function struct(Structure $struct, string $operator = 'and'): CondInterface
+    public static function struct(Structure $struct, string $operator = 'and'): ?CondInterface
     {
         return ConditionsFromStructureBuilder::convert($struct, $operator);
     }

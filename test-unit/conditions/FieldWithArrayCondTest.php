@@ -41,7 +41,7 @@ class FieldWithArrayCondTest extends TestCase
     }
 
     /**
-     * @return array
+     * @return string[]
      */
     protected function getAllowedOperators(): array
     {
@@ -102,6 +102,7 @@ class FieldWithArrayCondTest extends TestCase
     public function testSetValException1(): void
     {
         $this->expectException(\InvalidArgumentException::class);
+        /* @phpstan-ignore-next-line  */
         $obj = new FieldWithArrayCond('in', 'name', ['John', ['Martin']]);
     }
 
@@ -111,6 +112,7 @@ class FieldWithArrayCondTest extends TestCase
     public function testSetValException2(): void
     {
         $this->expectException(\InvalidArgumentException::class);
+        /* @phpstan-ignore-next-line  */
         $obj = new FieldWithArrayCond('in', 'name', ['John', (object) ['Martin']]);
     }
 }

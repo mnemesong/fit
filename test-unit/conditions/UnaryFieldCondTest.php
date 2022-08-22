@@ -29,7 +29,7 @@ class UnaryFieldCondTest extends TestCase
     }
 
     /**
-     * @return array
+     * @return string[]
      */
     protected function getAllowedOperators(): array
     {
