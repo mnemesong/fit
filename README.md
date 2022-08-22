@@ -1,6 +1,8 @@
 <h1>mnemesong/fit</h1>
 
 [![Latest Stable Version](http://poser.pugx.org/mnemesong/fit/v)](https://packagist.org/packages/mnemesong/fit)
+[![PHPUnit](https://github.com/mnemesong/fit/actions/workflows/phpunit.yml/badge.svg)](https://github.com/mnemesong/fit/actions/workflows/phpunit.yml)
+[![PHPStan-lvl9](https://github.com/mnemesong/fit/actions/workflows/phpstan.yml/badge.svg)](https://github.com/mnemesong/fit/actions/workflows/phpstan.yml)
 [![PHP Version Require](http://poser.pugx.org/mnemesong/fir/require/php)](https://packagist.org/packages/mnemesong/fit)
 [![License](http://poser.pugx.org/mnemesong/fit/license)](https://packagist.org/packages/mnemesong/fit)
 
