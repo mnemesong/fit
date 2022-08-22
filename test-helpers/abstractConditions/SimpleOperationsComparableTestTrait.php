@@ -1,6 +1,6 @@
 <?php
 
-namespace Mnemesong\MatchTestHelpers\abstractConditions;
+namespace Mnemesong\FitTestHelpers\abstractConditions;
 
 trait SimpleOperationsComparableTestTrait
 {

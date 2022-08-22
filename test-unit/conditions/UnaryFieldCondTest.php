@@ -1,10 +1,10 @@
 <?php
 
-namespace Mnemesong\MatchTestUnit\conditions;
+namespace Mnemesong\FitTestUnit\conditions;
 
-use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
-use Mnemesong\Match\conditions\UnaryFieldCond;
-use Mnemesong\MatchTestHelpers\abstractConditions\OperatorContainsConditionTestTrait;
+use Mnemesong\Fit\conditions\abstracts\OperatorContainsConditionInterface;
+use Mnemesong\Fit\conditions\UnaryFieldCond;
+use Mnemesong\FitTestHelpers\abstractConditions\OperatorContainsConditionTestTrait;
 use PHPUnit\Framework\TestCase;
 
 class UnaryFieldCondTest extends TestCase

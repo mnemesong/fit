@@ -1,8 +1,8 @@
 <?php
 
-namespace Mnemesong\MatchTestHelpers\abstractConditions;
+namespace Mnemesong\FitTestHelpers\abstractConditions;
 
-use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableInterface;
+use Mnemesong\Fit\conditions\abstracts\CaseInsensitiveComparableInterface;
 use PHPUnit\Framework\TestCase;
 
 trait CaseInsensitiveComparableTestTrait

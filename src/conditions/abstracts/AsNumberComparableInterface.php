@@ -1,6 +1,6 @@
 <?php
 
-namespace Mnemesong\Match\conditions\abstracts;
+namespace Mnemesong\Fit\conditions\abstracts;
 
 interface AsNumberComparableInterface
 {

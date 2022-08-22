@@ -1,8 +1,8 @@
 <?php
 
-namespace Mnemesong\MatchTestHelpers\abstractConditions;
+namespace Mnemesong\FitTestHelpers\abstractConditions;
 
-use Mnemesong\Match\conditions\abstracts\AsNumberComparableInterface;
+use Mnemesong\Fit\conditions\abstracts\AsNumberComparableInterface;
 use PHPUnit\Framework\TestCase;
 
 trait AsNumberComparableTestTrait

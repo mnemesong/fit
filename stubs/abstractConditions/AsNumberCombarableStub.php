@@ -1,9 +1,9 @@
 <?php
 
-namespace Mnemesong\MatchStubs\abstractConditions;
+namespace Mnemesong\FitStubs\abstractConditions;
 
-use Mnemesong\Match\conditions\abstracts\AsNumberComparableInterface;
-use Mnemesong\Match\conditions\abstracts\AsNumberComparableTrait;
+use Mnemesong\Fit\conditions\abstracts\AsNumberComparableInterface;
+use Mnemesong\Fit\conditions\abstracts\AsNumberComparableTrait;
 
 class AsNumberCombarableStub implements AsNumberComparableInterface
 {

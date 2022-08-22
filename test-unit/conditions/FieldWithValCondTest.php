@@ -1,14 +1,14 @@
 <?php
 
-namespace Mnemesong\MatchTestUnit\conditions;
+namespace Mnemesong\FitTestUnit\conditions;
 
-use Mnemesong\Match\conditions\abstracts\AsNumberComparableInterface;
-use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableInterface;
-use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
-use Mnemesong\Match\conditions\FieldWithValCond;
-use Mnemesong\MatchTestHelpers\abstractConditions\AsNumberComparableTestTrait;
-use Mnemesong\MatchTestHelpers\abstractConditions\CaseInsensitiveComparableTestTrait;
-use Mnemesong\MatchTestHelpers\abstractConditions\SimpleOperationsComparableTestTrait;
+use Mnemesong\Fit\conditions\abstracts\AsNumberComparableInterface;
+use Mnemesong\Fit\conditions\abstracts\CaseInsensitiveComparableInterface;
+use Mnemesong\Fit\conditions\abstracts\OperatorContainsConditionInterface;
+use Mnemesong\Fit\conditions\FieldWithValCond;
+use Mnemesong\FitTestHelpers\abstractConditions\AsNumberComparableTestTrait;
+use Mnemesong\FitTestHelpers\abstractConditions\CaseInsensitiveComparableTestTrait;
+use Mnemesong\FitTestHelpers\abstractConditions\SimpleOperationsComparableTestTrait;
 use PHPUnit\Framework\TestCase;
 
 class FieldWithValCondTest extends TestCase

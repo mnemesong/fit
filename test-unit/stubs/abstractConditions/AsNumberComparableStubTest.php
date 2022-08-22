@@ -1,10 +1,10 @@
 <?php
 
-namespace Mnemesong\MatchTestUnit\stubs\abstractConditions;
+namespace Mnemesong\FitTestUnit\stubs\abstractConditions;
 
-use Mnemesong\Match\conditions\abstracts\AsNumberComparableInterface;
-use Mnemesong\MatchStubs\abstractConditions\AsNumberCombarableStub;
-use Mnemesong\MatchTestHelpers\abstractConditions\AsNumberComparableTestTrait;
+use Mnemesong\Fit\conditions\abstracts\AsNumberComparableInterface;
+use Mnemesong\FitStubs\abstractConditions\AsNumberCombarableStub;
+use Mnemesong\FitTestHelpers\abstractConditions\AsNumberComparableTestTrait;
 use PHPUnit\Framework\TestCase;
 
 class AsNumberComparableStubTest extends TestCase

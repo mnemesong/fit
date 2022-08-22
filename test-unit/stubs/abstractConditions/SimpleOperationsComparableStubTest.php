@@ -1,10 +1,10 @@
 <?php
 
-namespace Mnemesong\MatchTestUnit\stubs\abstractConditions;
+namespace Mnemesong\FitTestUnit\stubs\abstractConditions;
 
-use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
-use Mnemesong\MatchStubs\abstractConditions\SimpleOperationsComparableStub;
-use Mnemesong\MatchTestHelpers\abstractConditions\SimpleOperationsComparableTestTrait;
+use Mnemesong\Fit\conditions\abstracts\OperatorContainsConditionInterface;
+use Mnemesong\FitStubs\abstractConditions\SimpleOperationsComparableStub;
+use Mnemesong\FitTestHelpers\abstractConditions\SimpleOperationsComparableTestTrait;
 use PHPUnit\Framework\TestCase;
 
 class SimpleOperationsComparableStubTest extends TestCase

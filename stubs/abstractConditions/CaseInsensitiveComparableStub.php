@@ -1,9 +1,9 @@
 <?php
 
-namespace Mnemesong\MatchStubs\abstractConditions;
+namespace Mnemesong\FitStubs\abstractConditions;
 
-use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableInterface;
-use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableTrait;
+use Mnemesong\Fit\conditions\abstracts\CaseInsensitiveComparableInterface;
+use Mnemesong\Fit\conditions\abstracts\CaseInsensitiveComparableTrait;
 
 class CaseInsensitiveComparableStub implements CaseInsensitiveComparableInterface
 {

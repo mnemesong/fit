@@ -1,10 +1,10 @@
 <?php
 
-namespace Mnemesong\Match\conditions;
+namespace Mnemesong\Fit\conditions;
 
-use Mnemesong\Match\conditions\abstracts\CondInterface;
-use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
-use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionTrait;
+use Mnemesong\Fit\conditions\abstracts\CondInterface;
+use Mnemesong\Fit\conditions\abstracts\OperatorContainsConditionInterface;
+use Mnemesong\Fit\conditions\abstracts\OperatorContainsConditionTrait;
 use Webmozart\Assert\Assert;
 
 class PolyCompositeCond implements OperatorContainsConditionInterface, CondInterface

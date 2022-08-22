@@ -1,10 +1,10 @@
 <?php
 
-namespace Mnemesong\MatchTestUnit\stubs\abstractConditions;
+namespace Mnemesong\FitTestUnit\stubs\abstractConditions;
 
-use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableInterface;
-use Mnemesong\MatchStubs\abstractConditions\CaseInsensitiveComparableStub;
-use Mnemesong\MatchTestHelpers\abstractConditions\CaseInsensitiveComparableTestTrait;
+use Mnemesong\Fit\conditions\abstracts\CaseInsensitiveComparableInterface;
+use Mnemesong\FitStubs\abstractConditions\CaseInsensitiveComparableStub;
+use Mnemesong\FitTestHelpers\abstractConditions\CaseInsensitiveComparableTestTrait;
 use PHPUnit\Framework\TestCase;
 
 class CaseInsensitiveComparableStubTest extends TestCase

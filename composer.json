@@ -1,5 +1,5 @@
 {
-    "name": "mnemesong/match",
+    "name": "mnemesong/fit",
     "description": "The package provides objects and an interface for build match conditions.",
     "type": "library",
     "require-dev": {
@@ -17,10 +17,10 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Mnemesong\\Match\\": "src/",
-            "Mnemesong\\MatchTestUnit\\": "test-unit/",
-            "Mnemesong\\MatchTestHelpers\\": "test-helpers/",
-            "Mnemesong\\MatchStubs\\": "stubs/"
+            "Mnemesong\\Fit\\": "src/",
+            "Mnemesong\\FitTestUnit\\": "test-unit/",
+            "Mnemesong\\FitTestHelpers\\": "test-helpers/",
+            "Mnemesong\\FitStubs\\": "stubs/"
         }
     },
     "authors": [

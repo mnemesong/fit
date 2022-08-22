@@ -1,9 +1,9 @@
 <?php
 
-namespace Mnemesong\MatchStubs\abstractConditions;
+namespace Mnemesong\FitStubs\abstractConditions;
 
-use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
-use Mnemesong\Match\conditions\abstracts\SimpleOperationsComparableTrait;
+use Mnemesong\Fit\conditions\abstracts\OperatorContainsConditionInterface;
+use Mnemesong\Fit\conditions\abstracts\SimpleOperationsComparableTrait;
 
 class SimpleOperationsComparableStub extends OperatorContainsConditionStub
 {

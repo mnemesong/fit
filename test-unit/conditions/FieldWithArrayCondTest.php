@@ -1,13 +1,13 @@
 <?php
 
-namespace Mnemesong\MatchTestUnit\conditions;
+namespace Mnemesong\FitTestUnit\conditions;
 
-use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableInterface;
-use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
-use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionTrait;
-use Mnemesong\Match\conditions\FieldWithArrayCond;
-use Mnemesong\MatchTestHelpers\abstractConditions\CaseInsensitiveComparableTestTrait;
-use Mnemesong\MatchTestHelpers\abstractConditions\OperatorContainsConditionTestTrait;
+use Mnemesong\Fit\conditions\abstracts\CaseInsensitiveComparableInterface;
+use Mnemesong\Fit\conditions\abstracts\OperatorContainsConditionInterface;
+use Mnemesong\Fit\conditions\abstracts\OperatorContainsConditionTrait;
+use Mnemesong\Fit\conditions\FieldWithArrayCond;
+use Mnemesong\FitTestHelpers\abstractConditions\CaseInsensitiveComparableTestTrait;
+use Mnemesong\FitTestHelpers\abstractConditions\OperatorContainsConditionTestTrait;
 use PHPUnit\Framework\TestCase;
 
 class FieldWithArrayCondTest extends TestCase

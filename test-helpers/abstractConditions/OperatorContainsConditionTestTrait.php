@@ -1,8 +1,8 @@
 <?php
 
-namespace Mnemesong\MatchTestHelpers\abstractConditions;
+namespace Mnemesong\FitTestHelpers\abstractConditions;
 
-use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
+use Mnemesong\Fit\conditions\abstracts\OperatorContainsConditionInterface;
 use PHPUnit\Framework\TestCase;
 
 trait OperatorContainsConditionTestTrait

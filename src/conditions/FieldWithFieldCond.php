@@ -1,14 +1,14 @@
 <?php
 
-namespace Mnemesong\Match\conditions;
+namespace Mnemesong\Fit\conditions;
 
-use Mnemesong\Match\conditions\abstracts\AsNumberComparableInterface;
-use Mnemesong\Match\conditions\abstracts\AsNumberComparableTrait;
-use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableInterface;
-use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableTrait;
-use Mnemesong\Match\conditions\abstracts\CondInterface;
-use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
-use Mnemesong\Match\conditions\abstracts\SimpleOperationsComparableTrait;
+use Mnemesong\Fit\conditions\abstracts\AsNumberComparableInterface;
+use Mnemesong\Fit\conditions\abstracts\AsNumberComparableTrait;
+use Mnemesong\Fit\conditions\abstracts\CaseInsensitiveComparableInterface;
+use Mnemesong\Fit\conditions\abstracts\CaseInsensitiveComparableTrait;
+use Mnemesong\Fit\conditions\abstracts\CondInterface;
+use Mnemesong\Fit\conditions\abstracts\OperatorContainsConditionInterface;
+use Mnemesong\Fit\conditions\abstracts\SimpleOperationsComparableTrait;
 
 /**
  * Field with another field comparing condition

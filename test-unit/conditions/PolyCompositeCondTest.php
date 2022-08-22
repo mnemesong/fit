@@ -1,12 +1,12 @@
 <?php
 
-namespace Mnemesong\MatchTestUnit\conditions;
+namespace Mnemesong\FitTestUnit\conditions;
 
-use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
-use Mnemesong\Match\conditions\FieldWithFieldCond;
-use Mnemesong\Match\conditions\PolyCompositeCond;
-use Mnemesong\Match\conditions\UnaryFieldCond;
-use Mnemesong\MatchTestHelpers\abstractConditions\OperatorContainsConditionTestTrait;
+use Mnemesong\Fit\conditions\abstracts\OperatorContainsConditionInterface;
+use Mnemesong\Fit\conditions\FieldWithFieldCond;
+use Mnemesong\Fit\conditions\PolyCompositeCond;
+use Mnemesong\Fit\conditions\UnaryFieldCond;
+use Mnemesong\FitTestHelpers\abstractConditions\OperatorContainsConditionTestTrait;
 use PHPUnit\Framework\TestCase;
 
 class PolyCompositeCondTest extends TestCase
