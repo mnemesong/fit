@@ -10,10 +10,14 @@ use Mnemesong\Fit\conditions\UnaryCompositeCond;
 use Mnemesong\Fit\conditions\UnaryFieldCond;
 use Mnemesong\Fit\Fit;
 use Mnemesong\FitTestHelpers\abstractConditions\OperatorContainsConditionTestTrait;
+use Mnemesong\Structure\Structure;
 use PHPUnit\Framework\TestCase;
 
 class FitTest extends TestCase
 {
+    /**
+     * @return void
+     */
     public function testBuildFieldWithValFits(): void
     {
         $c1 = Fit::field('name')->val('=', 'John');
@@ -26,6 +30,9 @@ class FitTest extends TestCase
         $this->assertEquals((new FieldWithValCond('<', 'index', '82910'))->asNum(), $c1);
     }
 
+    /**
+     * @return void
+     */
     public function testBuildFieldWithFieldFits(): void
     {
         $c = Fit::field('name')->field('=', 'account');
@@ -35,18 +42,27 @@ class FitTest extends TestCase
         $this->assertEquals((new FieldWithFieldCond('<', 'phone1', 'phone2'))->asNum(), $c);
     }
 
+    /**
+     * @return void
+     */
     public function testBuildFieldWithArrFits(): void
     {
         $c = Fit::field('name')->arr('in', ['John', 'Mary']);
         $this->assertEquals(new FieldWithArrayCond('in', 'name', ['John', 'Mary']), $c);
     }
 
+    /**
+     * @return void
+     */
     public function testFieldUnaryFit(): void
     {
         $c = Fit::field('pass')->is('!null');
         $this->assertEquals(new UnaryFieldCond('!null', 'pass'), $c);
     }
 
+    /**
+     * @return void
+     */
     public function testCompositeUnaryFit(): void
     {
         $c = Fit::notThat(Fit::field('name')->val('=', 'John')->asStr());
@@ -56,6 +72,9 @@ class FitTest extends TestCase
         );
     }
 
+    /**
+     * @return void
+     */
     public function testCompositePloyFit(): void
     {
         $c = Fit::andThat([
@@ -75,5 +94,34 @@ class FitTest extends TestCase
             Fit::field('name')->is('!null'),
             Fit::field('phone')->arr('!in', [''])
         ]), $c);
+    }
+
+    /**
+     * @return void
+     */
+    public function testStructureComparing(): void
+    {
+        $c = Fit::struct(new Structure(['name' => 'John', 'date' => null, 'age' => 18]));
+        $this->assertEquals(new PolyCompositeCond('and', [
+            new FieldWithValCond('=', 'name', 'John'),
+            new UnaryFieldCond('null', 'date'),
+            new FieldWithValCond('=', 'age', '18')
+        ]), $c);
+
+        $c = Fit::struct(new Structure(['name' => 'John', 'date' => null, 'age' => 18]), 'or');
+        $this->assertEquals(new PolyCompositeCond('or', [
+            new FieldWithValCond('=', 'name', 'John'),
+            new UnaryFieldCond('null', 'date'),
+            new FieldWithValCond('=', 'age', '18')
+        ]), $c);
+    }
+
+    /**
+     * @return void
+     */
+    public function testStructureComparingIncorrectOperator(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $c = Fit::struct(new Structure(['name' => 'John', 'date' => null, 'age' => 18]), '!');
     }
 }

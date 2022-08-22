@@ -2,10 +2,12 @@
 
 namespace Mnemesong\Fit;
 
+use Mnemesong\Fit\builder\ConditionsFromStructureBuilder;
 use Mnemesong\Fit\builder\NonCompositeCondBuilder;
 use Mnemesong\Fit\conditions\abstracts\CondInterface;
 use Mnemesong\Fit\conditions\PolyCompositeCond;
 use Mnemesong\Fit\conditions\UnaryCompositeCond;
+use Mnemesong\Structure\Structure;
 
 class Fit
 {
@@ -43,5 +45,15 @@ class Fit
     public static function orThat(array $conds): PolyCompositeCond
     {
         return new PolyCompositeCond('or', $conds);
+    }
+
+    /**
+     * @param Structure $struct
+     * @param string $operator
+     * @return CondInterface
+     */
+    public static function struct(Structure $struct, string $operator = 'and'): CondInterface
+    {
+        return ConditionsFromStructureBuilder::convert($struct, $operator);
     }
 }
