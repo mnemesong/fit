@@ -62,15 +62,30 @@ class PolyCompositeCondTest extends TestCase
      */
     public function testBasic(): void
     {
-        $obj = new PolyCompositeCond('and', [
+        $obj1 = new PolyCompositeCond('and', [
             new UnaryFieldCond('!null', 'birthday'),
             new FieldWithFieldCond('>=', 'age', 'mentalAge'),
         ]);
-        $this->assertEquals('and', $obj->getOperator());
+        $this->assertEquals('and', $obj1->getOperator());
         $this->assertEquals([
             new UnaryFieldCond('!null', 'birthday'),
             new FieldWithFieldCond('>=', 'age', 'mentalAge'),
-        ], $obj->getConds());
+        ], $obj1->getConds());
+
+        $obj2 = $obj1->withAddConds([
+            new UnaryFieldCond('null', 'phone'),
+            new FieldWithFieldCond('!=', 'email1', 'email2'),
+        ]);
+        $this->assertEquals([
+            new UnaryFieldCond('!null', 'birthday'),
+            new FieldWithFieldCond('>=', 'age', 'mentalAge'),
+            new UnaryFieldCond('null', 'phone'),
+            new FieldWithFieldCond('!=', 'email1', 'email2'),
+        ], $obj2->getConds());
+        $this->assertEquals([
+            new UnaryFieldCond('!null', 'birthday'),
+            new FieldWithFieldCond('>=', 'age', 'mentalAge'),
+        ], $obj1->getConds());
     }
 
     /**

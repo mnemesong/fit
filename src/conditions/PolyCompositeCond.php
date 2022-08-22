@@ -12,7 +12,7 @@ class PolyCompositeCond implements OperatorContainsConditionInterface, CondInter
     use OperatorContainsConditionTrait;
 
     /* @phpstan-ignore-next-line  */
-    protected array $conds;
+    protected array $conds = [];
 
     /**
      * @param string $operator
@@ -21,17 +21,17 @@ class PolyCompositeCond implements OperatorContainsConditionInterface, CondInter
     public function __construct(string $operator, array $conds)
     {
         $this->setOperator($operator);
-        $this->setConds($conds);
+        $this->addConds($conds);
     }
 
     /**
      * @param CondInterface[] $conds
      * @return void
      */
-    protected function setConds(array $conds): void
+    protected function addConds(array $conds): void
     {
         Assert::allSubclassOf($conds, CondInterface::class, 'All items in array of conditions should be objects');
-        $this->conds = array_values($conds);
+        $this->conds = array_values(array_merge($this->conds, $conds));
     }
 
     /**
@@ -40,6 +40,17 @@ class PolyCompositeCond implements OperatorContainsConditionInterface, CondInter
     public function getConds(): array
     {
         return $this->conds;
+    }
+
+    /**
+     * @param CondInterface[] $conds
+     * @return void
+     */
+    public function withAddConds(array $conds): self
+    {
+        $clone = clone $this;
+        $clone->addConds($conds);
+        return $clone;
     }
 
     /**
