@@ -38,6 +38,17 @@ class FieldWithValCond
     }
 
     /**
+     * @return $this
+     */
+    public function asNum(): self
+    {
+        Assert::numeric($this->value, 'Value should be numeric');
+        $clone = clone $this;
+        $clone->asNumbers = true;
+        return $clone;
+    }
+
+    /**
      * @return string
      */
     public function getFieldName(): string

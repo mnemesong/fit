@@ -22,7 +22,7 @@ class FieldWithValCondTest extends TestCase
      */
     protected function getInitAsNumberComparable(): AsNumberComparableInterface
     {
-        return new FieldWithValCond('=', 'name', 'John');
+        return new FieldWithValCond('=', 'name', '18');
     }
 
     /**
@@ -113,5 +113,15 @@ class FieldWithValCondTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         /* @phpstan-ignore-next-line  */
         $obj = new FieldWithValCond('!>', 'data', (object) ['name' => 'John']);
+    }
+
+    /**
+     * @return void
+     */
+    public function testincorrectAsNumComparing(): void
+    {
+        $obj = new FieldWithValCond('>=', 'name', 'John');
+        $this->expectException(\InvalidArgumentException::class);
+        $obj = $obj->asNum();
     }
 }

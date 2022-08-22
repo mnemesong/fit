@@ -14,7 +14,7 @@ trait SimpleOperationsComparableTrait
     public static function allowedOperators(): array
     {
         return [
-            '=', '!=', '>', '>=', '!>', '<', '<=', '!<', 'like', '!like'
+            '=', '!=', '>', '>=', '!>', '<', '<=', '!<',
         ];
     }
 }
