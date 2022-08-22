@@ -2,13 +2,14 @@
 
 namespace Mnemesong\Match\conditions;
 
+use Mnemesong\Match\conditions\abstracts\CondInterface;
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionTrait;
 
 /**
  * Field unary comparing condition
  */
-class UnaryFieldCond implements OperatorContainsConditionInterface
+class UnaryFieldCond implements OperatorContainsConditionInterface, CondInterface
 {
     use OperatorContainsConditionTrait;
 

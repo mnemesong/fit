@@ -2,30 +2,31 @@
 
 namespace Mnemesong\Match\conditions;
 
+use Mnemesong\Match\conditions\abstracts\CondInterface;
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionTrait;
 
-class UnaryCompositeCond implements OperatorContainsConditionInterface
+class UnaryCompositeCond implements OperatorContainsConditionInterface, CondInterface
 {
     use OperatorContainsConditionTrait;
 
     /**
      * @var object
      */
-    protected object $cond;
+    protected CondInterface $cond;
 
     /**
      * @param string $operator
-     * @param object $cond
+     * @param CondInterface $cond
      */
-    public function __construct(string $operator, object $cond)
+    public function __construct(string $operator, CondInterface $cond)
     {
         $this->setOperator($operator);
         $this->cond = $cond;
     }
 
     /**
-     * @return object
+     * @return CondInterface
      */
     public function getCond(): object
     {
@@ -33,7 +34,7 @@ class UnaryCompositeCond implements OperatorContainsConditionInterface
     }
 
     /**
-     * @return array|string[]
+     * @return string[]
      */
     public static function allowedOperators(): array
     {

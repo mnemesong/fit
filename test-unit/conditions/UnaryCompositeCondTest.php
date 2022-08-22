@@ -62,4 +62,14 @@ class UnaryCompositeCondTest extends TestCase
         $this->assertEquals('!', $obj->getOperator());
         $this->assertEquals(new UnaryFieldCond('null', 'name'), $obj->getCond());
     }
+
+    /**
+     * @return void
+     */
+    public function testCondSetException(): void
+    {
+        $this->expectException(\TypeError::class);
+        /* @phpstan-ignore-next-line */
+        $obj = new UnaryCompositeCond('!', (object) ['null' => 'name']);
+    }
 }

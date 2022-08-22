@@ -2,11 +2,12 @@
 
 namespace Mnemesong\Match\conditions;
 
+use Mnemesong\Match\conditions\abstracts\CondInterface;
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionTrait;
 use Webmozart\Assert\Assert;
 
-class PolyCompositeCond implements OperatorContainsConditionInterface
+class PolyCompositeCond implements OperatorContainsConditionInterface, CondInterface
 {
     use OperatorContainsConditionTrait;
 
@@ -15,7 +16,7 @@ class PolyCompositeCond implements OperatorContainsConditionInterface
 
     /**
      * @param string $operator
-     * @param object[] $conds
+     * @param CondInterface[] $conds
      */
     public function __construct(string $operator, array $conds)
     {
@@ -24,17 +25,17 @@ class PolyCompositeCond implements OperatorContainsConditionInterface
     }
 
     /**
-     * @param object[] $conds
+     * @param CondInterface[] $conds
      * @return void
      */
     protected function setConds(array $conds): void
     {
-        Assert::allObject($conds, 'All items in array of conditions should be objects');
+        Assert::allSubclassOf($conds, CondInterface::class, 'All items in array of conditions should be objects');
         $this->conds = array_values($conds);
     }
 
     /**
-     * @return object[]
+     * @return CondInterface[]
      */
     public function getConds(): array
     {
@@ -42,7 +43,7 @@ class PolyCompositeCond implements OperatorContainsConditionInterface
     }
 
     /**
-     * @return array|string[]
+     * @return string[]
      */
     public static function allowedOperators(): array
     {

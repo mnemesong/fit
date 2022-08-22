@@ -3,7 +3,7 @@
 namespace Mnemesong\MatchTestUnit\conditions;
 
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
-use Mnemesong\Match\conditions\FieldsWithFieldCond;
+use Mnemesong\Match\conditions\FieldWithFieldCond;
 use Mnemesong\Match\conditions\PolyCompositeCond;
 use Mnemesong\Match\conditions\UnaryFieldCond;
 use Mnemesong\MatchTestHelpers\abstractConditions\OperatorContainsConditionTestTrait;
@@ -29,7 +29,7 @@ class PolyCompositeCondTest extends TestCase
     {
         return new PolyCompositeCond($operator, [
             new UnaryFieldCond('!null', 'birthday'),
-            new FieldsWithFieldCond('>=', 'age', 'mentalAge'),
+            new FieldWithFieldCond('>=', 'age', 'mentalAge'),
         ]);
     }
 
@@ -64,12 +64,24 @@ class PolyCompositeCondTest extends TestCase
     {
         $obj = new PolyCompositeCond('and', [
             new UnaryFieldCond('!null', 'birthday'),
-            new FieldsWithFieldCond('>=', 'age', 'mentalAge'),
+            new FieldWithFieldCond('>=', 'age', 'mentalAge'),
         ]);
         $this->assertEquals('and', $obj->getOperator());
         $this->assertEquals([
             new UnaryFieldCond('!null', 'birthday'),
-            new FieldsWithFieldCond('>=', 'age', 'mentalAge'),
+            new FieldWithFieldCond('>=', 'age', 'mentalAge'),
         ], $obj->getConds());
+    }
+
+    /**
+     * @return void
+     */
+    public function testCondSetException(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        /* @phpstan-ignore-next-line */
+        $obj = new PolyCompositeCond('!', [
+            (object) ['null' => 'name']
+        ]);
     }
 }

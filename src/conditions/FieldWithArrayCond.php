@@ -4,6 +4,7 @@ namespace Mnemesong\Match\conditions;
 
 use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableInterface;
 use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableTrait;
+use Mnemesong\Match\conditions\abstracts\CondInterface;
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionTrait;
 use Webmozart\Assert\Assert;
@@ -11,7 +12,7 @@ use Webmozart\Assert\Assert;
 /**
  * Field with array comparing condition
  */
-class FieldWithArrayCond implements CaseInsensitiveComparableInterface, OperatorContainsConditionInterface
+class FieldWithArrayCond implements CaseInsensitiveComparableInterface, OperatorContainsConditionInterface, CondInterface
 {
     use CaseInsensitiveComparableTrait;
     use OperatorContainsConditionTrait;

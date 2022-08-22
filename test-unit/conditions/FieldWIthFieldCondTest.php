@@ -5,7 +5,7 @@ namespace Mnemesong\MatchTestUnit\conditions;
 use Mnemesong\Match\conditions\abstracts\AsNumberComparableInterface;
 use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableInterface;
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
-use Mnemesong\Match\conditions\FieldsWithFieldCond;
+use Mnemesong\Match\conditions\FieldWithFieldCond;
 use Mnemesong\MatchTestHelpers\abstractConditions\AsNumberComparableTestTrait;
 use Mnemesong\MatchTestHelpers\abstractConditions\CaseInsensitiveComparableTestTrait;
 use Mnemesong\MatchTestHelpers\abstractConditions\SimpleOperationsComparableTestTrait;
@@ -22,7 +22,7 @@ class FieldWIthFieldCondTest extends TestCase
      */
     protected function getInitAsNumberComparable(): AsNumberComparableInterface
     {
-        return new FieldsWithFieldCond('=', 'name', 'account');
+        return new FieldWithFieldCond('=', 'name', 'account');
     }
 
     /**
@@ -30,7 +30,7 @@ class FieldWIthFieldCondTest extends TestCase
      */
     protected function getInitCaseInsensitiveComparable(): CaseInsensitiveComparableInterface
     {
-        return new FieldsWithFieldCond('=', 'name', 'account');
+        return new FieldWithFieldCond('=', 'name', 'account');
     }
 
     /**
@@ -47,7 +47,7 @@ class FieldWIthFieldCondTest extends TestCase
      */
     protected function getInitOperatorContainsCondition(string $operator): OperatorContainsConditionInterface
     {
-        return new FieldsWithFieldCond($operator, 'date1', 'date2');
+        return new FieldWithFieldCond($operator, 'date1', 'date2');
     }
 
     /**
@@ -55,9 +55,10 @@ class FieldWIthFieldCondTest extends TestCase
      */
     public function testBasics(): void
     {
-        $obj = new FieldsWithFieldCond('=', 'name', 'account');
+        $obj = new FieldWithFieldCond('=', 'name', 'account');
         $this->assertEquals('=', $obj->getOperator());
         $this->assertEquals('name', $obj->getField1());
         $this->assertEquals('account', $obj->getField2());
     }
+
 }

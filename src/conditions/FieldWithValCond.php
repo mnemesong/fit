@@ -4,6 +4,7 @@ namespace Mnemesong\Match\conditions;
 
 use Mnemesong\Match\conditions\abstracts\AsNumberComparableInterface;
 use Mnemesong\Match\conditions\abstracts\AsNumberComparableTrait;
+use Mnemesong\Match\conditions\abstracts\CondInterface;
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
 use Mnemesong\Match\conditions\abstracts\SimpleOperationsComparableTrait;
 use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableInterface;
@@ -14,7 +15,7 @@ use Webmozart\Assert\Assert;
  * Field with scalar value comparing condition
  */
 class FieldWithValCond
-    implements AsNumberComparableInterface, CaseInsensitiveComparableInterface, OperatorContainsConditionInterface
+    implements AsNumberComparableInterface, CaseInsensitiveComparableInterface, OperatorContainsConditionInterface, CondInterface
 {
     use AsNumberComparableTrait;
     use CaseInsensitiveComparableTrait;
