@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23bc9a4c960dd302653502ee20a5817a",
+    "content-hash": "d7717b125dcae53f5c2221190a2c9382",
     "packages": [
         {
             "name": "mnemesong/structure",
