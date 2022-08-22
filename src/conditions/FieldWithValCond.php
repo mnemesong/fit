@@ -11,7 +11,7 @@ use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableTrait;
 use Webmozart\Assert\Assert;
 
 /**
- * Field with scalar value simple comparing condition
+ * Field with scalar value comparing condition
  */
 class FieldWithValCond
     implements AsNumberComparableInterface, CaseInsensitiveComparableInterface, OperatorContainsConditionInterface

@@ -9,6 +9,9 @@ use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableTrait;
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
 use Mnemesong\Match\conditions\abstracts\SimpleOperationsComparableTrait;
 
+/**
+ * Field with another field comparing condition
+ */
 class FieldsWithFieldCond
     implements AsNumberComparableInterface, CaseInsensitiveComparableInterface, OperatorContainsConditionInterface
 {
