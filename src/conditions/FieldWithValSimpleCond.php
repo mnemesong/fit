@@ -10,7 +10,10 @@ use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableInterface;
 use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableTrait;
 use Webmozart\Assert\Assert;
 
-class FieldWithValueSimpleComparingCond
+/**
+ * Field with scalar value simple comparing condition
+ */
+class FieldWithValSimpleCond
     implements AsNumberComparableInterface, CaseInsensitiveComparableInterface, OperatorContainsConditionInterface
 {
     use AsNumberComparableTrait;

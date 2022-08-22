@@ -11,7 +11,7 @@ trait SimpleOperationsComparableTestTrait
      */
     protected function getAllowedOperators(): array
     {
-        return ['=', '!=', '>', '>=', '!>', '<', '<=', '!<'];
+        return ['=', '!=', '>', '>=', '!>', '<', '<=', '!<', 'like'];
     }
 
     /**
@@ -19,7 +19,7 @@ trait SimpleOperationsComparableTestTrait
      */
     protected function getProhibitedOperator1(): string
     {
-        return 'like';
+        return 'in';
     }
 
     /**

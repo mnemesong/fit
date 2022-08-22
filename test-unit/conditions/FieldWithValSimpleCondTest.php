@@ -5,13 +5,13 @@ namespace Mnemesong\MatchTestUnit\conditions;
 use Mnemesong\Match\conditions\abstracts\AsNumberComparableInterface;
 use Mnemesong\Match\conditions\abstracts\CaseInsensitiveComparableInterface;
 use Mnemesong\Match\conditions\abstracts\OperatorContainsConditionInterface;
-use Mnemesong\Match\conditions\FieldWithValueSimpleComparingCond;
+use Mnemesong\Match\conditions\FieldWithValSimpleCond;
 use Mnemesong\MatchTestHelpers\abstractConditions\AsNumberComparableTestTrait;
 use Mnemesong\MatchTestHelpers\abstractConditions\CaseInsensitiveComparableTestTrait;
 use Mnemesong\MatchTestHelpers\abstractConditions\SimpleOperationsComparableTestTrait;
 use PHPUnit\Framework\TestCase;
 
-class FieldsWitValueSimpleComparingCondTest extends TestCase
+class FieldWithValSimpleCondTest extends TestCase
 {
     use AsNumberComparableTestTrait;
     use CaseInsensitiveComparableTestTrait;
@@ -22,7 +22,7 @@ class FieldsWitValueSimpleComparingCondTest extends TestCase
      */
     protected function getInitAsNumberComparable(): AsNumberComparableInterface
     {
-        return new FieldWithValueSimpleComparingCond('=', 'name', 'John');
+        return new FieldWithValSimpleCond('=', 'name', 'John');
     }
 
     /**
@@ -30,7 +30,7 @@ class FieldsWitValueSimpleComparingCondTest extends TestCase
      */
     protected function getInitCaseInsensitiveComparable(): CaseInsensitiveComparableInterface
     {
-        return new FieldWithValueSimpleComparingCond('=', 'date', '2022-21-11');
+        return new FieldWithValSimpleCond('=', 'date', '2022-21-11');
     }
 
     /**
@@ -47,7 +47,7 @@ class FieldsWitValueSimpleComparingCondTest extends TestCase
      */
     protected function getInitOperatorContainsCondition(string $operator): OperatorContainsConditionInterface
     {
-        return new FieldWithValueSimpleComparingCond($operator, 'name', 'John');
+        return new FieldWithValSimpleCond($operator, 'name', 'John');
     }
 
     /**
@@ -55,7 +55,7 @@ class FieldsWitValueSimpleComparingCondTest extends TestCase
      */
     public function testBasics(): void
     {
-        $obj = new FieldWithValueSimpleComparingCond('!>', 'account', 'mary123');
+        $obj = new FieldWithValSimpleCond('!>', 'account', 'mary123');
         $this->assertEquals('!>', $obj->getOperator());
         $this->assertEquals('account', $obj->getFieldName());
         $this->assertEquals('mary123', $obj->getValue());
@@ -66,22 +66,22 @@ class FieldsWitValueSimpleComparingCondTest extends TestCase
      */
     public function testValueSet(): void
     {
-        $obj = new FieldWithValueSimpleComparingCond('!>', 'data', 'garaf');
+        $obj = new FieldWithValSimpleCond('!>', 'data', 'garaf');
         $this->assertEquals('garaf', $obj->getValue());
 
-        $obj = new FieldWithValueSimpleComparingCond('!>', 'data', 4124);
+        $obj = new FieldWithValSimpleCond('!>', 'data', 4124);
         $this->assertEquals('4124', $obj->getValue());
 
-        $obj = new FieldWithValueSimpleComparingCond('!>', 'data', 42.112);
+        $obj = new FieldWithValSimpleCond('!>', 'data', 42.112);
         $this->assertEquals('42.112', $obj->getValue());
 
-        $obj = new FieldWithValueSimpleComparingCond('!>', 'data', true);
+        $obj = new FieldWithValSimpleCond('!>', 'data', true);
         $this->assertEquals('1', $obj->getValue());
 
-        $obj = new FieldWithValueSimpleComparingCond('!>', 'data', '');
+        $obj = new FieldWithValSimpleCond('!>', 'data', '');
         $this->assertEquals('', $obj->getValue());
 
-        $obj = new FieldWithValueSimpleComparingCond('!>', 'data', null);
+        $obj = new FieldWithValSimpleCond('!>', 'data', null);
         $this->assertEquals(null, $obj->getValue());
     }
 
@@ -92,7 +92,7 @@ class FieldsWitValueSimpleComparingCondTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
         /* @phpstan-ignore-next-line  */
-        $obj = new FieldWithValueSimpleComparingCond('!>', 'data', ['asf']);
+        $obj = new FieldWithValSimpleCond('!>', 'data', ['asf']);
     }
 
     /**
@@ -102,7 +102,7 @@ class FieldsWitValueSimpleComparingCondTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
         /* @phpstan-ignore-next-line  */
-        $obj = new FieldWithValueSimpleComparingCond('!>', 'data', []);
+        $obj = new FieldWithValSimpleCond('!>', 'data', []);
     }
 
     /**
@@ -112,6 +112,6 @@ class FieldsWitValueSimpleComparingCondTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
         /* @phpstan-ignore-next-line  */
-        $obj = new FieldWithValueSimpleComparingCond('!>', 'data', (object) ['name' => 'John']);
+        $obj = new FieldWithValSimpleCond('!>', 'data', (object) ['name' => 'John']);
     }
 }
