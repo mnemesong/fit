@@ -42,7 +42,9 @@ class FieldWithValCond
      */
     public function asNum(): self
     {
-        Assert::numeric($this->value, 'Value should be numeric');
+        if(!is_null($this->value)) {
+            Assert::numeric($this->value, 'Value should be numeric');
+        }
         $clone = clone $this;
         $clone->asNumbers = true;
         return $clone;

@@ -118,10 +118,20 @@ class FieldWithValCondTest extends TestCase
     /**
      * @return void
      */
-    public function testincorrectAsNumComparing(): void
+    public function testIncorrectAsNumComparing(): void
     {
         $obj = new FieldWithValCond('>=', 'name', 'John');
         $this->expectException(\InvalidArgumentException::class);
         $obj = $obj->asNum();
+    }
+
+    /**
+     * @return void
+     */
+    public function testNullToNumConvert(): void
+    {
+        $obj = new FieldWithValCond('>=', 'name', null);
+        $obj = $obj->asNum();
+        $this->assertEquals(null, $obj->getValue());
     }
 }
